@@ -10,17 +10,26 @@ void main()
  
 	printf("Enter the adjacency matrix:\n");
 	for(i=0;i<n;i++){
-		printf("Enter row %d\n",i+1);
 		for(j=0;j<n;j++)
 		{
 			scanf("%d",&cost[i][j]);
-			
-			
+			// When minimum value is 0 convert it to 999
 			if(cost[i][j]==0)
 				cost[i][j]=999;
 		}
-		vis[i]=1;
 	}
+	//First index visited
+	vis[1]=1;
+	/*
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<n;j++)
+		{
+			printf("%d\t",cost[i][j]);
+		}
+		printf("\n");
+	}
+*/
 	
 	while(ne<n)
 	{
@@ -39,9 +48,9 @@ void main()
 				}
 			}
 		}
-		if(vis[u]==0 || vis[u]==0)
+		if(vis[u]==0 || vis[v]==0)
 		{
-			printf("Edges %d:(%d -> %d),cost %d",ne++,a,b,mincost);
+			printf("Edges %d:(%d -> %d),cost %d\n",ne++,a,b,mincost);
 			mincost+=min;
 			vis[b]=1;
 		}
