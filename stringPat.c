@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <sys/time.h>
+#include <time.h>
 
-char t[100], p[50];
+char t[2000], p[50];
 int n,m;
 
 int brute_force()
