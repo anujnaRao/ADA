@@ -60,9 +60,12 @@ void main()
 			int c=0;
 			for(i=0;i<n;i++)
 			{
-				if(ar[i][k] == 1 && c <=1)
+				if(ar[i][k] == 1)
+				{
 				 ind[k]--;
-				 c++;
+				 //c++;
+				 //break;
+				}
 			}
 		}
 		count++;
