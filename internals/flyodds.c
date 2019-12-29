@@ -30,7 +30,7 @@ void main()
 		for(j=0;j<n;j++)
 		{
 			scanf("%d",&p[i][j]);
-			if(p[i][j] ==0 && i!=0)
+			if(p[i][j] ==0 && i!=j)
 			  p[i][j] = 999;
 		}
 	}
