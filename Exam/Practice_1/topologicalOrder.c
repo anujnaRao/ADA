@@ -56,16 +56,13 @@ void main()
 			{
 				printf("%d\t",(k+1));
 				flag[k]=1;
-			}
-			int c=0;
-			for(i=0;i<n;i++)
-			{
-				if(ar[i][k] == 1)
-				{
-				 ind[k]--;
-				 //c++;
-				 //break;
-				}
+			
+				for(i=0;i<n;i++)
+					if(ar[k][i] == 1)
+					{
+					 ind[i]--;
+					}
+					break;
 			}
 		}
 		count++;
