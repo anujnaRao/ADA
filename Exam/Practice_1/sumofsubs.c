@@ -3,11 +3,11 @@
 #define TRUE 1
 #define FALSE 0
 
-int inc[50], set[50],sum,n,flag=0;
+int inc[50],set[50],n,sum,flag=0,total;
 
 int promising(int i,int val,int total)
 {
-	return(  (val+total>= sum) && (  val==sum || val+set[i+1] <=sum ) );
+	return( (val+total>=sum) && ( val==sum || val+set[i+1]<=sum ) );
 }
 
 void sumset(int i,int val,int total)
@@ -15,13 +15,13 @@ void sumset(int i,int val,int total)
 	int j;
 	if(promising(i,val,total))
 	{
-		if( val == sum)
+		if( val==sum )
 		{
 			printf("\n{");
 			flag=1;
 			for(j=0;j<=i;j++)
-			 if(inc)
-			  printf("%d\t",set[j]);
+			 if(inc[j])
+			  printf("\t%d",set[j]);
 			printf("}\n");
 		}
 		else
@@ -36,28 +36,34 @@ void sumset(int i,int val,int total)
 
 void main()
 {
-	int i,j,temp[50],val,total=0;
-	
-	printf("How many numbers to enter?\n");
+	int i,j,total=0,temp=-1;
+	printf("How many numbers?\n");
 	scanf("%d",&n);
 	
-	printf("Enter the numbers:\n");
+	printf("Enter the set of numbers\n");
 	for(i=0;i<n;i++)
 	{
 		scanf("%d",&set[i]);
+		if(set[i] != temp)
+		 temp=set[i];
+		else
+		{
+			printf("Enter unique value\n");
+			exit(0);
+		}
 		total+=set[i];
 	}
-	 
-	printf("Enter the sum :\n");
+	printf("Enter the sum\n");
 	scanf("%d",&sum);
 	
 	if(total<sum)
-	 printf("Subset sum can not be calculated\n");
+	 printf("Subset sum is less than sum\n");
 	else
 	{
 		for(i=0;i<n;i++)
 		 inc[i]=0;
-		 printf("\nSolution ");
+		 
+		printf("\nSolution ");
 	}
 	sumset(-1,0,total);
 	if(!flag)

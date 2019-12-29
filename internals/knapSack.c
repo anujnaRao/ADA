@@ -39,7 +39,7 @@ int knapSack(int Weight,int obj[],int val[],int n)
 		if(k[i][j] != k[i-1][j])
 		{
 			x[i]=1;
-			j=Weight-obj[i-1];
+			j=j-obj[i-1];
 		}
 		i--;
 	}
@@ -49,7 +49,7 @@ int knapSack(int Weight,int obj[],int val[],int n)
 		printf("%d\t",obj[i]);
 	}
 	printf("\n");
-	for(i=0;i<n;i++)
+	for(i=1;i<=n;i++)
 	{
 		printf("%d\t",x[i]);
 	}
@@ -60,7 +60,7 @@ int knapSack(int Weight,int obj[],int val[],int n)
 void main()
 {
 	int i,n,val[10],obj[10],Weight;
-	printf("Enter the number of vertices: \n");
+	printf("Enter the number of objects: \n");
 	scanf("%d",&n);
 	
 	printf("Enter for value and weight:\n");
