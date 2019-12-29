@@ -58,11 +58,13 @@ void main()
 				flag[k]=1;
 			
 				for(i=0;i<n;i++)
+				{
 					if(ar[k][i] == 1)
 					{
 					 ind[i]--;
 					}
-					break;
+				}
+				break;
 			}
 		}
 		count++;
