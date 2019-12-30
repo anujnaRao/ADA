@@ -53,6 +53,19 @@ void main()
 		}
 		total+=set[i];
 	}
+	/*for(i=0;i<n;i++)
+        {
+                p:scanf("%d",&w[i]);
+                if(w[i]!=prev)
+                        prev=w[i];
+                else
+                {
+                        printf("\nEnter unique value : ");
+                        goto p;
+                }
+                total+=w[i];
+        }*/
+	
 	printf("Enter the sum\n");
 	scanf("%d",&sum);
 	
