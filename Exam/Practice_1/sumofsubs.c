@@ -64,7 +64,7 @@ void main()
                         goto p;
                 }
                 total+=w[i];
-        }*/
+        }*/ 	
 	
 	printf("Enter the sum\n");
 	scanf("%d",&sum);
